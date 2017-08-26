@@ -7,10 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .d-flex.flex-row
+    .d-flex.flex-column
       = render("shared/nav")
       = render("shared/side-bar")
       = render('shared/main')
-    .row
+    .d-inline-flex.flex-row
       .col
         = yield
