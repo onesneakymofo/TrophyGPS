@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :relationships, foreign_key: 'follower_id'
   has_many :followers, through: :relationships, dependent: :destroy
   has_many :identities, dependent: :destroy
-c
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
     user = signed_in_resource ? signed_in_resource : identity.user
