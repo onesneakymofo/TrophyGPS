@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170826163109) do
     t.text "image_data"
     t.string "imageable_type"
     t.integer "imageable_id"
+    t.point "coordinates"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
