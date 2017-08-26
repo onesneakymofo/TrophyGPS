@@ -6,17 +6,32 @@ body {
   padding: 0;
 }
 
+.layout {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
 .nav-bar-layout {
   background: red;
   border: 2px green solid;
+  width: 100px;
 }
 
 .side-bar-layout {
   background: blue;
   border: 2px pink solid;
+  width: 200px;
+  left: 100px;
+  .title {
+    background: pink;
+    width: 100%;
+  }
 }
 
 .main-view {
   background: green;
   border: 2px orange solid;
+  width: 100%;
+  left: 300px;
 }

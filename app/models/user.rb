@@ -3,6 +3,9 @@ class User < ApplicationRecord
   TEMP_EMAIL_REGEX = /\Achange@me/
 
   has_many :posts, dependent: :destroy
+  has_many :relationships, foreign_key: 'follower_id'
+  has_many :followers, through: :relationships, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
