@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 gem 'devise_masquerade'
+gem 'high_voltage'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 gem 'pg'
