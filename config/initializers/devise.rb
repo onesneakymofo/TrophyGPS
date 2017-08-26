@@ -278,5 +278,6 @@ Devise.setup do |config|
    Figaro.env.facebook_app_secret,
     scope: 'email,public_profile'
 
-  config.omniauth :twitter, "KEY", "SECRET"
+  config.omniauth :twitter, Figaro.env.twitter_app_id,
+   Figaro.env.twitter_app_secret
 end
