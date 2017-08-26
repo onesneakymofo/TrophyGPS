@@ -19,7 +19,7 @@ Post.destroy_all
     description: Faker::RickAndMorty.quote,
     coordinates: [
       Faker::Number.normal(33.513164, 0.00001),
-      Faker::Number.normal(-86.807892, 3.5)
+      Faker::Number.normal(-86.807892, 0.00001)
     ]
   )
 end
