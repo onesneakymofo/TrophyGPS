@@ -16,10 +16,11 @@ Post.destroy_all
 
   post = Post.create(
     user: user,
+    title: Faker::Hipster.sentence(3),
     description: Faker::RickAndMorty.quote,
     coordinates: [
-      Faker::Number.normal(33.513164, 0.00001),
-      Faker::Number.normal(-86.807892, 0.00001)
+      Faker::Number.normal(33.513164, 0.3),
+      Faker::Number.normal(-86.807892, 0.3)
     ]
   )
 end

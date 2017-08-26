@@ -1,5 +1,4 @@
-.side-bar-layout.layout
-  %ul
-    = items.each do |item|
-      %li
-        %span.post-title=item.user.name
+.index-bar-layout.layout
+  %ul.index-list
+    - items.each do |item|
+      = render partial: 'posts/post', locals: { post: item }

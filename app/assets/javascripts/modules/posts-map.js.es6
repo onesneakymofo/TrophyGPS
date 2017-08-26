@@ -8,21 +8,19 @@
       super(L.map('map-large').setView([33.5, -86], 8))
     }
 
-    // addPoints(data) {
-    //   data.forEach(post => {
-    //     // const icon = post.status === 'passed' ? greenIcon : redIcon
-    //     post.locations.forEach(location => {
-    //       if (
-    //         super.rejectData(location.latitude) ||
-    //         super.rejectData(location.longitude)
-    //       )
-    //         return
-    //       L.marker([location.latitude, location.longitude], { icon: icon }).addTo(
-    //         this.map
-    //       )
-    //     }, this)
-    //   })
-    // }
+    addPoints(data) {
+      data.forEach(post => {
+        const icon = greenIcon
+        if (
+          super.rejectData(post.coordinates.x) ||
+          super.rejectData(post.coordinates.y)
+        )
+          return
+        L.marker([post.coordinates.x, post.coordinates.y], {
+          icon: icon
+        }).addTo(this.map)
+      }, this)
+    }
   }
 
   $(document).on('turbolinks:load', () => {
