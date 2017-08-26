@@ -1,6 +1,2 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+= render("show_bar", post: @post)
+#map-large{ data: { behavior: 'posts-map' }}
