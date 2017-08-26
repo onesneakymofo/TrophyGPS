@@ -2,5 +2,6 @@
   %li.post-list-item
     %span.post-title=post.user.name
     %span.text-muted
-      100 followers
+      = post.user.followers.count
+      = 'follower'.pluralize(post.user.followers.count)
     = link_to 'Follow', '/'
