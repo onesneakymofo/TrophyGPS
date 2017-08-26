@@ -13,16 +13,21 @@ body {
 }
 
 .nav-bar-layout {
-  background: red;
-  border: 2px green solid;
-  width: 100px;
+  background: #fff;
+  color: #c8c9d3;
+  letter-spacing: 3px;
+  width: 150px;
+  text-align: center;
+  .title {
+    text-decoration: underline;
+  }
 }
 
 .side-bar-layout {
   background: blue;
   border: 2px pink solid;
-  width: 200px;
-  left: 100px;
+  width: 300px;
+  left: 150px;
   .title {
     background: pink;
     width: 100%;
@@ -33,5 +38,20 @@ body {
   background: green;
   border: 2px orange solid;
   width: 100%;
-  left: 300px;
+  left: 450px;
+}
+
+.button {
+  width: 75px;
+  height: 75px;
+  background: blue;
+  color: white;
+}
+
+.avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 48px;
+  background: blue;
+  color: white;
 }
