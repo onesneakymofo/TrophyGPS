@@ -15,11 +15,14 @@ body {
 .nav-bar-layout {
   background: #fff;
   color: #c8c9d3;
-  letter-spacing: 3px;
   width: 150px;
   text-align: center;
   .title {
-    text-decoration: underline;
+    letter-spacing: 3px;
+  }
+  a {
+    text-decoration: none;
+    color: #0099ff;
   }
 }
 
@@ -35,17 +38,25 @@ body {
   left: 450px;
 }
 
-.button {
-  width: 75px;
-  height: 75px;
-  background: blue;
-  color: white;
+.button-nav {
+  display: block;
+  width: 90px;
+  height: 90px;
+  color: #009aff;
+  border-radius: 3px;
+  transition: 250ms all;
+  &:hover {
+    text-decoration: none;
+    color: #006daa;
+  }
 }
 
 .avatar {
   width: 75px;
   height: 75px;
   border-radius: 48px;
-  background: blue;
+  background: white;
+  border: 2px solid #009aff;
   color: white;
+  background-image: asset-url('avatar.png');
 }

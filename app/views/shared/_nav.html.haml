@@ -1,5 +1,11 @@
-.nav-bar-layout.p-2.layout.d-flex.flex-column
+.nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center
   .title NAVIGATION
-  .button.m-2 button
-  .button.m-2 button
+  %div
+    =link_to posts_path, class:"button-nav m-2" do
+      =image_tag "icon-map.png"
+      Map
+    %div.mt-4
+      =link_to posts_path, class:"button-nav m-2" do
+        =image_tag "icon-addpost.png"
+        Add Post
   .avatar.m-2.mt-auto
