@@ -1,0 +1,12 @@
+.row
+  .col-md-6.offset-md-3
+    .card
+      .card-block
+        .card-title.text-center.mb-2
+          %ul
+            %li
+              = link_to "Sign in with Facebook",
+                user_facebook_omniauth_authorize_path
+            %li
+              = link_to "Sign in with Twitter",
+                user_twitter_omniauth_authorize_path
