@@ -26,6 +26,8 @@ body {
 .index-bar-layout {
   width: 300px;
   left: 150px;
+  box-shadow: 5px 0 5px -5px #333;
+  z-index: 5;
 }
 
 .main-view {
