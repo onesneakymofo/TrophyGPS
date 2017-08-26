@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 20170826172232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "followers", force: :cascade do |t|
-    t.bigint "user_id"
-    t.integer "following"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["following"], name: "index_followers_on_following"
-    t.index ["user_id"], name: "index_followers_on_user_id"
-  end
-
   create_table "identities", force: :cascade do |t|
     t.bigint "user_id"
     t.string "provider"
@@ -41,6 +32,16 @@ ActiveRecord::Schema.define(version: 20170826172232) do
     t.point "coordinates"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +62,5 @@ ActiveRecord::Schema.define(version: 20170826172232) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "followers", "users"
   add_foreign_key "identities", "users"
 end
