@@ -1,0 +1,119 @@
+@mixin transform($in) {
+   transform:$in;
+   -webkit-transform:$in;
+   -moz-transform:$in;
+   -o-transform:$in;
+   -ms-transform:$in;
+}
+
+@mixin transition($in) {
+   transition:$in;
+   -webkit-transition:$in;
+   -moz-transition:$in;
+   -o-transition:$in;
+   -ms-transition:$in;
+}
+
+.sign_in{
+   background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   font-family: 'Roboto', sans-serif;
+}
+.box {
+   position: relative;
+   top: 0;
+   opacity: 1;
+   float: left;
+   padding: 60px 50px 40px 50px;
+   width: 100%;
+   background: #fff;
+   border-radius: 10px;
+   transform: scale(1);
+   -webkit-transform: scale(1);
+   -ms-transform: scale(1);
+   z-index: 5;
+}
+
+.box.back {
+   transform: scale(.95);
+   -webkit-transform: scale(.95);
+   -ms-transform: scale(.95);
+   top: -20px;
+   opacity: .8;
+   z-index: -1;
+}
+
+.box:before {
+   content: "";
+   width: 100%;
+   height: 30px;
+   border-radius: 10px;
+   position: absolute;
+   top: -10px;
+   background: rgba(255, 255, 255, .6);
+   left: 0;
+   transform: scale(.95);
+   -webkit-transform: scale(.95);
+   -ms-transform: scale(.95);
+   z-index: -1;
+}
+
+
+.materialContainer {
+   width: 100%;
+   max-width: 460px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+}
+
+
+
+.socialBtn {
+  padding:20px;
+  border-radius:6px;
+  border:0;
+  background:#f26964;
+  font-size:1.2em;
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  box-shadow:0px 3px 0px #c1524e;
+  overflow: hidden;
+   .insider {
+      display: none;
+      background-color:#fff;
+      width:100%;
+      height:5px;
+      position:absolute;
+      left:-305px;
+      @include transform(rotateZ(45deg));
+   }
+}
+
+.socialBtn:hover {
+  top:10px;
+  text-decoration: none;
+  color: #fff;
+  .insider {
+    @include transition(all 0.3s ease);
+    left:305px;
+   }
+}
+
+
+.fb {
+  margin-bottom:15px;
+  background:#3b5998;
+  box-shadow:0px 3px 0px #2c416e;
+}
+
+.tw {
+  background:#00acee;
+  box-shadow:0px 3px 0px #008dc3;
+}
