@@ -1,5 +1,16 @@
-.index-bar-layout.layout
+.index-bar-layout.layout.show-bar
   %h4=post.title
   %p
     by
     =post.user.name
+  %hr
+
+  .bar-detail
+    %h5 Details
+    %p.info-text= post.description
+    %hr
+  .bar-detail
+    detail section
+    %hr
+  .bar-detail
+    detail section
