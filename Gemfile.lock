@@ -88,6 +88,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (4.0.7)
@@ -270,6 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise_masquerade
+  font-awesome-rails
   haml-rails
   high_voltage
   jbuilder (~> 2.5)
