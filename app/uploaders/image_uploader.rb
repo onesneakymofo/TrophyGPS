@@ -5,8 +5,8 @@ class ImageUploader < Shrine
   # plugins and uploading logic
   Shrine.plugin :determine_mime_type
   Shrine.plugin :direct_upload
-  Shrine.plugin :processing
   Shrine.plugin :cached_attachment_data
+  plugin :processing
 
   process(:store) do |io, context|
     # mmi = MiniMagick::Image.read(io)
