@@ -2,11 +2,21 @@
   = link_to edit_user_registration_path(current_user) do
     = image_tag current_user.gravatar_url, class: "avatar-round circle"
   = link_to new_post_path do
+    = image_tag "icon-map-dropper.svg", class:"icon-image-sm"
+    %div.d-flex.align-items-center
+      .link-effects
+        Map
+  = link_to posts_path do
     = image_tag "icon-add.svg", class:"icon-image-sm"
     %div.d-flex.align-items-center
-      = link_to 'Add Post', new_post_path, class: "link-effects"
-  = image_tag "icon-map-dropper.svg", class: "icon-image-md"
-  = link_to 'Map', authenticated_root_path, class: "link-effects"
+      .link-effects
+        Posts
+  = link_to new_post_path do
+    = image_tag "icon-add.svg", class:"icon-image-sm"
+    %div.d-flex.align-items-center
+      .link-effects
+        Add Post
+
 
   .avatar.m-4.mt-auto
     = link_to 'Logout', destroy_user_session_path, method: :delete, class:"link-effects"

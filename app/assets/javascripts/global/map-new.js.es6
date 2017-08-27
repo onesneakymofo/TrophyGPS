@@ -12,7 +12,7 @@ class MapNew {
 
   setupMap() {
     L.tileLayer(
-      'https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=40f51ecb3cec419baae0b43ea45f59e1',
+      'http://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
       {
         attribution: ''
       }
