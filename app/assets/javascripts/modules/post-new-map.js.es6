@@ -5,7 +5,7 @@
 
   class PostsMap extends MapNew {
     constructor() {
-      super(L.map('map-large').setView([33.5, -86], 8))
+      super(L.map('map-new-post').setView([33.5, -86], 8))
     }
 
     addToMap(x,y) {

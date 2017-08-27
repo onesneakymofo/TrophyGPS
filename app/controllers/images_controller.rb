@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  layout 'authenticated_application'
   def new
     @image = Image.new()
   end

@@ -5,14 +5,15 @@
       %ul
         - @post.errors.full_messages.each do |msg|
           %li= msg
-  %fieldset
+  %fieldset.image-and-map
     .row
-      .col-4
-        %img{style: 'max-width: 100%;', src: @post.image.image_url }
-      .col-8
+      .col-5
+        .post-image
+          %img{ src: @post.image.image_url }
+      .col-6
         #coordinates{data: {latitude: @post.image.coordinates.to_a.first,
                            longitude: @post.image.coordinates.to_a.last}}
-        #map-large{ data: { behavior: 'posts-map-new' } }
+        #map-new-post{ data: { behavior: 'posts-map-new' } }
   %fieldset
     %p
       = f.label :title

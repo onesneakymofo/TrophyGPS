@@ -5,7 +5,6 @@ class ImageUploader < Shrine
   # plugins and uploading logic
   # Shrine.plugin :determine_mime_type
   # Shrine.plugin :direct_upload
-  # Shrine.plugin :cached_attachment_data
   plugin :processing
 
   process(:store) do |io, context|
@@ -13,8 +12,7 @@ class ImageUploader < Shrine
     mmi.exif
     context[:record][:exif_tags] = mmi.exif.to_json
     context[:record][:coordinates] = get_coordinates(mmi.exif)
-
-    nil
+    io.download
   end
 
   def get_coordinates(exif_data)
@@ -37,8 +35,8 @@ class ImageUploader < Shrine
         lon_multiplier = -1
       end
 
-      latitude = (lat_degrees.to_f + (lat_minutes.to_f / 60.0 ) / 100.0) * lat_multiplier
-      longitude = (lon_degrees.to_f + (lon_minutes.to_f / 60.0 ) / 100.0) * lon_multiplier
+      latitude = (lat_degrees.to_f + (lat_minutes.to_f ) / 60.0) * lat_multiplier
+      longitude = (lon_degrees.to_f + (lon_minutes.to_f ) / 60.0) * lon_multiplier
       [latitude, longitude]
     end
 
