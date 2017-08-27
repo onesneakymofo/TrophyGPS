@@ -1,5 +1,6 @@
 .index-bar-layout.layout.show-bar.p-0
-  .p-0.gradient.text-white
+  .p-0.text-white
+    %img{src: 'https://unsplash.it/374/185'}
     .row.pt-3.pb-3
       .col-md-12
         .row
@@ -20,10 +21,12 @@
           .col-md-12
       .col-md-3.text-center.mt-3
       .col-md-9
-  .p-0
-    %img{src: 'https://unsplash.it/374/185'}
-    .mt-3
-      %h5 Details
-      %p.info-text= post.description
-      %hr
-    .bar-detail= post.created_at
+  .row
+    .col-md-12
+      %h2 Details
+  .row
+    .col-md-12
+      .mt-3
+        %p.info-text= post.description
+        %hr
+      .bar-detail= post.created_at
