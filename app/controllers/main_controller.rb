@@ -1,6 +1,7 @@
 class MainController < ApplicationController
   layout 'authenticated_application'
 
-  def index;
+  def index
+    
   end
 end

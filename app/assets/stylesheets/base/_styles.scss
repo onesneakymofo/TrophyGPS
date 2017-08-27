@@ -17,7 +17,7 @@ body {
   color: #fff;
   width: 100px;
   text-align: center;
-  border-right: 1px solid #eee;
+  // border-right: 1px solid #eee;
   .title {
     letter-spacing: 3px;
   }
@@ -65,8 +65,17 @@ body {
 
 .avatar {
   width: 75px;
-  height: 75px;
   color: white;
+  border-radius: 50px;
+}
+
+.avatar-round {
+  border-radius: 50px;
+  border: 1px solid #fff;
+  transition: all 250ms;
+  &:hover {
+    border: 1px solid #f4b21e;
+  }
 }
 
 .background-full {
@@ -96,6 +105,11 @@ body {
 .icon-image-sm {
   margin-top: 15px;
   width: 25px;
+}
+
+.title {
+  color: #fff;
+  font-weight: lighter;
 }
 
 .link-effects {
@@ -160,5 +174,36 @@ body {
     opacity: 1;
     background: #3b5998;
     border: 1px solid #3b5998;
+  }
+}
+
+.logo-image-sm {
+  width: 20px;
+}
+
+.circle {
+  fill: none;
+  stroke: red;
+  stroke-width: 5px;
+  stroke-dasharray: 40;
+  transition: all .2s ease-in-out;
+  animation: outWaveOut 1s cubic-bezier(0.42, 0.0, 0.58, 1.0) forwards;
+}
+
+@keyframes outWaveIn {
+  to {
+    stroke-width: 10px;
+    stroke-dasharray: 400;
+  }
+}
+@keyframes outWaveOut {
+  from {
+    stroke-width: 10px;
+    stroke-dasharray: 400;
+  }
+  to {
+    stroke: #ffffff;
+    stroke-width: 5px;
+    stroke-dasharray: 40;
   }
 }

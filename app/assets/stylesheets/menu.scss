@@ -24,9 +24,13 @@ a {
   transition: all .3s ease;
   box-shadow: 5px 0 5px 0px rgba(0, 0, 0, .05);
   z-index: 5;
-  background: #008c50;
+  background: #fff;
   position: fixed;
   border-left: 1px solid #eee;
+  h5 {
+    background: #f4b21e;
+    text-align: center;
+  }
 }
 
 .index-bar-layout.show {

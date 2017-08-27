@@ -1,9 +1,10 @@
-.index-bar-layout.show-bar
-  %h5
+.index-bar-layout.show-bar.p-0
+  %h5.p-3
     Top Posts
-  - @posts.each do |post|
-    .row
-      .col-md-12
-        = link_to post.title, post_path(post)
-        %hr
+  .p-3
+    - @posts.each do |post|
+      .row
+        .col-md-12
+          = link_to post.title, post_path(post)
+          %hr
 #map-large{ data: { behavior: 'posts-map' }}
