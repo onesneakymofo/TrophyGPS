@@ -49,6 +49,25 @@ body {
   }
 }
 
+.button-main {
+  background: #f4b21e;
+  color: black;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+  height: 50px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: 250ms all;
+  &:hover {
+    text-decoration: none;
+    color: #006daa;
+    background: white;
+  }
+}
+
 .avatar {
   width: 75px;
   height: 75px;
@@ -57,4 +76,18 @@ body {
   border: 2px solid #009aff;
   color: white;
   background-image: asset-url('avatar.png');
+}
+
+.background-full {
+  width: 100%;
+  height: 100vh;
+  background: asset-url('background-main.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo-image {
+  width: 250px;
 }
