@@ -8,9 +8,12 @@ module ApplicationHelper
   end
 
   def star_rating
-    rand = (1..5)
+    rand = (1..5).to_a.sample
     content_tag :div, class: 'star-rating' do
-      5.times do
+      rand.times do
+        concat content_tag :span, nil, class: 'fa fa-star'
+      end
+      (5-rand).times do
         concat content_tag :span, nil, class: 'fa fa-star-o'
       end
     end
