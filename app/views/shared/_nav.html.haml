@@ -7,5 +7,6 @@
   =link_to 'Posts', posts_path, class:"link-effects"
 
   .avatar.m-4.mt-auto
-    =image_tag "icon-avatar.svg"
+    = link_to edit_user_registration_path(current_user) do
+      = image_tag current_user.gravatar_url
     = link_to 'Logout', destroy_user_session_path, method: :delete, class:"link-effects"

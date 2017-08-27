@@ -102,6 +102,7 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gravtastic (3.2.6)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   faker!
   figaro
   font-awesome-rails
+  gravtastic
   haml-rails
   high_voltage
   image_processing

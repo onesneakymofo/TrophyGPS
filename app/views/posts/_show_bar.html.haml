@@ -10,7 +10,8 @@
         by
         =post.user.name
   .p-0
-    %img{src: 'https://unsplash.it/250'}s
+    .post-image
+      %img{src: @post.image.image_url}s
     .bar-detail
       %h5 Details
       %p.info-text= post.description
