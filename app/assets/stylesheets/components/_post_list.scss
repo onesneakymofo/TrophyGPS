@@ -1,5 +1,25 @@
 @import 'base/base';
+.nav-back {
+  background: #f4b21e;
+  width: 250px;
+  height: 60px;
+  color: #fff;
+  display: block;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  text-align: center;
+  justify-content: center;
 
+  i {
+    margin-right: 10px;
+    font-size: 1.4em;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+}
 ul.index-list {
   padding: 0px;
 }

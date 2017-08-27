@@ -8,14 +8,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  namespace :users do
-    resources :relationships, only: %w(create destroy)
-  end
-
-  resources :posts
-  resources :images, only: [ :new, :create ]
-
   authenticated :user do
-    root to: 'main#index', as: :authenticated_root
+    get 'main', to: 'main#index', as: :authenticated_root
+    resources :posts
+    resources :images, only: [ :new, :create ]
+    namespace :users do
+      resources :relationships, only: %w(create destroy)
+    end
   end
 end

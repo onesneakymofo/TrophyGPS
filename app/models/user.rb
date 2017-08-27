@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+  include Gravtastic
+  gravtastic
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -40,6 +41,18 @@ class User < ApplicationRecord
     end
     user
   end
+
+  def gravatar
+    # include MD5 gem, should be part of standard ruby install
+    # require 'digest/md5'
+
+
+    hash = Digest::MD5.hexdigest(email.downcase)
+
+    # compile URL which can be used in <img src="RIGHT_HERE"...
+    "https://www.gravatar.com/avatar/#{hash}"
+  end
+
 
   def follower_id_for(user)
     self.follower_relationships.find_by_user_id(user.id)
