@@ -29,7 +29,7 @@
     addPoints(data) {
       if (data.length) {
         data.forEach(post => {
-          if ($(post.coordinates.x).length > 0 && $(post.coordinates.y).length > 0) {
+          if ((typeof post.coordinates.x !== 'undefined') && (typeof post.coordinates.x !== 'undefined')) {
             this.addToMap(post)
             }
         }, this)
