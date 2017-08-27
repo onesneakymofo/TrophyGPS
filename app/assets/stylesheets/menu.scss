@@ -1,15 +1,11 @@
 .nav-bar-layout {
   background: #fff;
   color: #07AA6;
-  width: 150px;
+  width: 250px;
   text-align: center;
   border-right: 1px solid #eee;
   .title {
     letter-spacing: 3px;
-  }
-  a {
-    text-decoration: none;
-    color: #3abc30;
   }
 }
 
@@ -27,17 +23,19 @@
 .index-bar-layout.show {
   opacity: 1;
   background: #fff;
-  width: 250px;
-  .top{
-    background: #FF9F1C;
-  }
+  width: 375px;
+  .gradient {
+      background-color: #3abc30;
+      background-image: linear-gradient(62deg, #3abc30 0%, #17a917 100%);
+    }
+  overflow-y: overlay;
 }
-
-.gradient {
-    background-color: #3abc30;
-    background-image: linear-gradient(62deg, #3abc30 0%, #17a917 100%);
-  }
 
 .text-white {
   color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #3abc30;
+  font-size: 14px;
 }
