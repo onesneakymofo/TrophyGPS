@@ -17,6 +17,7 @@ body {
   color: #c8c9d3;
   width: 150px;
   text-align: center;
+  border-right: 1px solid #eee;
   .title {
     letter-spacing: 3px;
   }
@@ -26,14 +27,9 @@ body {
   }
 }
 
-.index-bar-layout {
-  width: 300px;
-  left: 150px;
-}
-
 .main-view {
   width: 100%;
-  left: 450px;
+  left: 125px;
 }
 
 .button-nav {
@@ -71,11 +67,8 @@ body {
 .avatar {
   width: 75px;
   height: 75px;
-  border-radius: 48px;
   background: white;
-  border: 2px solid #009aff;
   color: white;
-  background-image: asset-url('avatar.png');
 }
 
 .background-full {

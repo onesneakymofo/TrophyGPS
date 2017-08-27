@@ -1,4 +1,4 @@
-class Map {
+class MapNew {
   constructor(map) {
     this.map = map
     this.dataUrl = window.location.href
@@ -17,13 +17,11 @@ class Map {
         attribution: ''
       }
     ).addTo(this.map)
-    new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
   }
 
   fetchDataPoints() {
-    $.getJSON(this.dataUrl).done(data => {
-      this.addPoints(data)
-    })
+    this.addToMap($("#coordinates").data('latitude'),
+                  $("#coordinates").data('longitude'));
   }
 
   setupIcons() {

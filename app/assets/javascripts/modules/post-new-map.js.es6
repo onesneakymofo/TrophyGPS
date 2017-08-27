@@ -1,21 +1,24 @@
-//= require ../global/map
+//= require ../global/map-new
 
 ;(() => {
-  let COMPONENT_SELECTOR = '[data-behavior="posts-map"]'
+  let COMPONENT_SELECTOR = '[data-behavior="posts-map-new"]'
 
-  class PostsMap extends Map {
+  class PostsMap extends MapNew {
     constructor() {
-      super(L.map('map-large', { zoomControl: false }).setView([33.5, -86], 8))
+      super(L.map('map-new-post').setView([33.5, -86], 8))
     }
 
-    addToMap(post) {
+    addToMap(x,y) {
       const icon = greenIcon
       if (
-        super.rejectData(post.coordinates.x) ||
-        super.rejectData(post.coordinates.y)
+        super.rejectData(x) ||
+        super.rejectData(y)
       )
         return
-      L.marker([post.coordinates.x, post.coordinates.y], {
+      L.marker([x, y], {
+        bounceOnAdd: true,
+        bounceOnAddOptions: {duration: 1500, height: 200},
+        bounceOnAddCallback: function() {console.log("done");},
         icon: icon
       }).addTo(this.map)
     }

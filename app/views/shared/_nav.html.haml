@@ -1,11 +1,5 @@
 .nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center
-  .title NAVIGATION
-  %div
-    =link_to posts_path, class:"button-nav m-2" do
-      =image_tag "icon-map.png"
-      Map
-    %div.mt-4
-      =link_to posts_path, class:"button-nav m-2" do
-        =image_tag "icon-addpost.png"
-        Add Post
+  = link_to 'Home', root_path
+  =link_to 'Posts', posts_path
   .avatar.m-2.mt-auto
+    = link_to 'Logout', destroy_user_session_path, method: :delete
