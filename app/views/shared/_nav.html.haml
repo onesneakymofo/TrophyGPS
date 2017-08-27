@@ -4,7 +4,7 @@
     = image_tag "icon-map-dropper.svg", class:"icon-image-md"
     %div.d-flex.align-items-center
       .link-effects
-        Map
+        &nbsp;Map
   = link_to posts_path do
     = image_tag "icon-add.svg", class:"icon-image-sm"
     %div.d-flex.align-items-center
@@ -18,6 +18,6 @@
 
 
   .avatar.mt-auto
-    = link_to edit_user_registration_path(current_user) do
+    = link_to edit_user_registration_path do
       = image_tag current_user.gravatar_url, class: "avatar-round"
     = link_to 'Logout', destroy_user_session_path, method: :delete, class:"link-effects"
