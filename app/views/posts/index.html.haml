@@ -4,8 +4,11 @@
     Top Posts
   .p-3
     - @posts.each do |post|
-      .row
+      .row.pr-3
         .col-md-12
           = link_to post.title, post_path(post)
+          %p.i-light
+            by
+            = post.user.name
           %hr
 #map-large{ data: { behavior: 'posts-map' }}
