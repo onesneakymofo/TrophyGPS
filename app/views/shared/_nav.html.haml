@@ -1,6 +1,5 @@
 .nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center.nav-background-full
-  = link_to edit_user_registration_path(current_user) do
-    = image_tag current_user.gravatar_url, class: "avatar-round circle"
+  = image_tag "logo-small.svg", class: "logo-small"
   = link_to new_post_path do
     = image_tag "icon-add.svg", class:"icon-image-sm"
     %div.d-flex.align-items-center
@@ -8,5 +7,7 @@
   = image_tag "icon-map-dropper.svg", class: "icon-image-md"
   = link_to 'Map', authenticated_root_path, class: "link-effects"
 
-  .avatar.m-4.mt-auto
+  .avatar.mt-auto
+    = link_to edit_user_registration_path(current_user) do
+      = image_tag current_user.gravatar_url, class: "avatar-round"
     = link_to 'Logout', destroy_user_session_path, method: :delete, class:"link-effects"
