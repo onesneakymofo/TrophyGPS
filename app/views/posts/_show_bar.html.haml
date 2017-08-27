@@ -19,8 +19,12 @@
   .pl-3
     .row.mt-3
       .col-md-12
-        %h2 Details
-        %hr
+        .star-rating
+          %span.fa.fa-star-o{"data-rating" => "1"}
+          %span.fa.fa-star-o{"data-rating" => "2"}
+          %span.fa.fa-star-o{"data-rating" => "3"}
+          %span.fa.fa-star-o{"data-rating" => "4"}
+          %span.fa.fa-star-o{"data-rating" => "5"}
         .mt-3
           %p.info-text
           - if post.description.present?
