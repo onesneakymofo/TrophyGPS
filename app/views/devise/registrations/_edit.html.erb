@@ -1,3 +1,7 @@
+<%=link_to posts_path, class: 'nav-back' do %>
+  <i class="fa fa-angle-left"></i>
+  Back to posts
+<% end %>
 <h2>My Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
