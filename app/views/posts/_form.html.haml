@@ -6,6 +6,14 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
   %fieldset
+    .row
+      .col-4
+        %img{style: 'max-width: 100%;', src: @post.image.image_url }
+      .col-8
+        #coordinates{data: {latitude: @post.image.coordinates.to_a.first,
+                           longitude: @post.image.coordinates.to_a.last}}
+        #map-large{ data: { behavior: 'posts-map-new' } }
+  %fieldset
     %p
       = f.label :title
       = f.text_field :title, class: 'form-control'
@@ -13,11 +21,6 @@
     %p
       = f.label :description
       = f.text_field :description, class: 'form-control'
-  %fieldset
-    = f.fields_for :image do |ff|
-      = ff.hidden_field :image, value: ff.object.cached_image_data
-      = ff.file_field :image
-
   .actions
     = f.submit 'Save'
 
