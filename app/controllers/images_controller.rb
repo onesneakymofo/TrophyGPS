@@ -5,11 +5,16 @@ class ImagesController < ApplicationController
   end
 
   def create
+    @post = nil
     @image = Image.new(image_params)
-    @post = Post.new(image: @image, user: current_user)
-    @post.image.imageable = @post
+    unless(@image.image_data.blank?)
+      @post = Post.new(image: @image, user: current_user)
+      @post.image.imageable = @post
+    else
+      @image.errors.add(:image, "Is Required")
+    end
     respond_to do |format|
-      if @post.save(validate: false)
+      if @post && @post.save(validate: false)
         format.html { redirect_to edit_post_path(@post), notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else

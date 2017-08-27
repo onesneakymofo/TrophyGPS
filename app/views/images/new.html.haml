@@ -5,6 +5,12 @@
   %h5 New Trophy Posting
 
   = form_for @image do |f|
+    - if @image.errors.any?
+      #error_explanation
+        %h5= "#{pluralize(@image.errors.count, "error")} prohibited this Post from being created:"
+        %ul
+          - @image.errors.full_messages.each do |msg|
+            %li= msg
     %fieldset
       %p
         = f.hidden_field :image, value: @image.cached_image_data
