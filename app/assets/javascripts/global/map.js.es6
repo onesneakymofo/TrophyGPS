@@ -12,9 +12,20 @@ class Map {
 
   setupMap() {
     L.tileLayer(
-      'https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=40f51ecb3cec419baae0b43ea45f59e1',
+      'http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/hybrid.day/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}',
       {
-        attribution: ''
+        attribution:
+          'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+        subdomains: '1234',
+        mapID: 'newest',
+        app_id: 'I8Ag6z3GVBMzt6491VcG',
+        app_code: 'Yk2uH8wzG2f4ZOI5QTTCvQ',
+        base: 'aerial',
+        maxZoom: 20,
+        type: 'maptile',
+        language: 'eng',
+        format: 'png8',
+        size: '256'
       }
     ).addTo(this.map)
     new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
