@@ -16,6 +16,9 @@
       )
         return
       L.marker([x, y], {
+        bounceOnAdd: true,
+        bounceOnAddOptions: {duration: 1500, height: 200},
+        bounceOnAddCallback: function() {console.log("done");},
         icon: icon
       }).addTo(this.map)
     }
