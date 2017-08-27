@@ -1,5 +1,6 @@
-%ul.unstyled
-  %li= link_to 'Home', root_path
-  %li= link_to 'Posts', posts_path
-.avatar.m-2.mt-auto
-  = link_to 'Logout', destroy_user_session_path, method: :delete
+.nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center
+  = link_to 'Home', root_path
+  = link_to 'Posts', posts_path
+  = link_to 'New Post', images_new_path
+  .avatar.m-2.mt-auto
+    = link_to 'Logout', destroy_user_session_path, method: :delete

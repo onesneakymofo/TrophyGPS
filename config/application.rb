@@ -12,6 +12,7 @@ module TrophyGPS
     config.load_defaults 5.1
    config.to_prepare do
      # Configure single controller layout
+     Devise::RegistrationsController.layout "authenticated_application"
      Devise::SessionsController.layout "sign_in"
     end
 

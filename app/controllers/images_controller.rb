@@ -6,10 +6,10 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
-    @post = Post.new(image: @image, user: User.first)
+    @post = Post.new(image: @image, user: current_user)
     @post.image.imageable = @post
     respond_to do |format|
-      if @post.save!
+      if @post.save(validate: false)
         format.html { redirect_to edit_post_path(@post), notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
