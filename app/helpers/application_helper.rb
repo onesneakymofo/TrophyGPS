@@ -6,4 +6,13 @@ module ApplicationHelper
       link_to 'Follow', users_relationships_path(user_id: current_user, followed_id: post.user.id, post_id: post.id), method: :post, class: 'btn btn-primary btn-small'
     end
   end
+
+  def star_rating
+    rand = (1..5)
+    content_tag :div, class: 'star-rating' do
+      5.times do
+        concat content_tag :span, nil, class: 'fa fa-star-o'
+      end
+    end
+  end
 end

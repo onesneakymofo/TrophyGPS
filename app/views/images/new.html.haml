@@ -1,9 +1,8 @@
-.index-bar-layout.layout.show.show-bar
+.index-bar-layout.layout.show.show-bar.p-3
   %br
   %br
   %br
   %h5 New Trophy Posting
-
 
   = form_for @image do |f|
     - if @image.errors.any?
@@ -20,4 +19,3 @@
       %p
         = f.submit 'Create', class: 'btn'
 #map-new-post{ data: { behavior: 'posts-new-image' }}
-
