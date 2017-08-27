@@ -1,26 +1,44 @@
 //= require ../global/map-new
 
 ;(() => {
-  let COMPONENT_SELECTOR = '[data-behavior="posts-map-new"]'
+  let COMPONENT_SELECTOR = '[data-behavior="posts-map-new"],[data-behavior="posts-new-image"]'
 
   class PostsMap extends MapNew {
     constructor() {
       super(L.map('map-new-post').setView([33.5, -86], 8))
     }
 
+    whenMarkerIsDragged(e) {
+    }
+
     addToMap(x,y) {
-      const icon = greenIcon
+      const fixedIcon = redIcon;
+      const moveableIcon = greenIcon;
+      debugger;
       if (
         super.rejectData(x) ||
         super.rejectData(y)
-      )
-        return
+      ) {
+
+        L.marker([33.5, -86], {
+          draggable: true,
+          bounceOnAdd: true,
+          bounceOnAddOptions: {duration: 1500, height: 200},
+          bounceOnAddCallback: function() {console.log("done");},
+          icon: moveableIcon
+        }).on('move', function (e) {
+          // debugger;
+          $('#post_coordinates').val(e.latlng.lat + ',' + e.latlng.lng);
+        }).addTo(this.map)
+
+      } else {
       L.marker([x, y], {
         bounceOnAdd: true,
         bounceOnAddOptions: {duration: 1500, height: 200},
         bounceOnAddCallback: function() {console.log("done");},
-        icon: icon
+        icon: fixedIcon
       }).addTo(this.map)
+      }
     }
 
     addPoints(data) {
@@ -32,6 +50,7 @@
         this.addToMap(data)
       }
     }
+
   }
 
   $(document).on('turbolinks:load', () => {
