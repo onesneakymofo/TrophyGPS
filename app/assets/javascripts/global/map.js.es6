@@ -11,12 +11,9 @@ class Map {
   }
 
   setupMap() {
-    L.tileLayer(
-      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: ''
-      }
-    ).addTo(this.map)
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: ''
+    }).addTo(this.map)
     new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
   }
 
