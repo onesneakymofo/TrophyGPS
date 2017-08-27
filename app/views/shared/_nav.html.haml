@@ -1,5 +1,6 @@
 .nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center.nav-background-full
-  = image_tag "logo-small.svg", class: "logo-small"
+  = link_to posts_path do
+    = image_tag "logo-small.svg", class: "logo-small"
   = link_to authenticated_root_path do
     = image_tag "icon-map-dropper.svg", class:"icon-image-md"
     %div.d-flex.align-items-center
