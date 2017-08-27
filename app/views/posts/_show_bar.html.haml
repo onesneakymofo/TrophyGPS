@@ -1,16 +1,18 @@
-.index-bar-layout.layout.show-bar
-  %h4=post.title
-  %p
-    by
-    =post.user.name
-  %hr
+.index-bar-layout.layout.show.show-bar.p-0
+  %img{src: 'https://unsplash.it/250'}
+  .p-3
+    %h4.p-0
 
-  .bar-detail
-    %h5 Details
-    %p.info-text= post.description
+    %p
+      by
+      =post.user.name
     %hr
-  .bar-detail
-    detail section
+
+    .bar-detail
+      %h5 Details
+      %p.info-text= post.description
+      %hr
+    .bar-detail= post.created_at
     %hr
-  .bar-detail
-    detail section
+    .bar-detail
+      detail section
