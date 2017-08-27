@@ -13,8 +13,8 @@ body {
 }
 
 .nav-bar-layout {
-  background: #fff;
-  color: #c8c9d3;
+  background: asset-url('background-main.png') no-repeat center center fixed;
+  color: #fff;
   width: 100px;
   text-align: center;
   border-right: 1px solid #eee;
@@ -23,7 +23,6 @@ body {
   }
   a {
     text-decoration: none;
-    color: #fff;
   }
 }
 
@@ -101,6 +100,7 @@ body {
 
 .link-effects {
   transition: 250ms all;
+  color: #fff;
   a {
     text-decoration: none;
     color: #fff;

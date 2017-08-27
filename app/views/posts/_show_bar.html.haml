@@ -1,13 +1,13 @@
 .index-bar-layout.layout.show.show-bar.p-0
-  %img{src: 'https://unsplash.it/250'}
-  .p-3
-    %h4.p-0
-
-    %p
-      by
-      =post.user.name
-    %hr
-
+  .p-0.gradient.text-white
+    = link_to ' ', posts_path, class: 'fa fa-arrow-l'
+    .p-3
+      %h6.p-0.g
+        = post.title
+        by
+        =post.user.name
+  .p-0
+    %img{src: 'https://unsplash.it/250'}s
     .bar-detail
       %h5 Details
       %p.info-text= post.description
