@@ -1,7 +1,16 @@
-= render("shared/bar")
-%h1 Images#new
+.index-bar-layout.layout.show.show-bar.p-0
+  %br
+  %br
+  %br
+  %h5 New Trophy Posting
 
-= render 'form'
-
-= link_to 'Back', posts_path
+  = form_for @image do |f|
+    %fieldset
+      %p
+        = f.hidden_field :image, value: @image.cached_image_data
+        = f.file_field :image
+    .actions
+      %p
+        = f.submit 'Create', class: 'btn'
+#map-new-post{ data: { behavior: 'posts-new-image' }}
 

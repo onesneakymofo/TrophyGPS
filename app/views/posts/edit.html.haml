@@ -11,6 +11,8 @@
         %ul
           - @post.errors.full_messages.each do |msg|
             %li= msg
+    = f.hidden_field :coordinates, value: [@post.image.coordinates.to_a.first,
+                                          @post.image.coordinates.to_a.last].join(',')
     %fieldset.image-and-map
       .post-image
         %img{ src: @post.image.image_url }
@@ -20,10 +22,11 @@
       %p
         = f.label :title
         = f.text_field :title, class: 'form-control'
+
     %fieldset
       %p
         = f.label :description
         = f.text_field :description, class: 'form-control'
-    .actionso
+    .actions
       = f.submit 'Save'
 #map-new-post{ data: { behavior: 'posts-map-new' }}
