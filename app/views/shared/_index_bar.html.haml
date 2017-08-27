@@ -1,0 +1,5 @@
+.index-bar-layout.layout
+  %h2=title
+  %ul.index-list
+    - items.each do |item|
+      = render partial: 'posts/post', locals: { post: item }

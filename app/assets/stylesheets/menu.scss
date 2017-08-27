@@ -1,13 +1,18 @@
-.nav-bar-layout {
-  background: #fff;
-  color: #07AA6;
-  width: 250px;
-  text-align: center;
-  border-right: 1px solid #eee;
-  .title {
-    letter-spacing: 3px;
-  }
-}
+
+// .nav-bar-layout {
+//   background: #fff;
+//   color: #07AA6;
+//   width: 150px;
+//   text-align: center;
+//   border-right: 1px solid #eee;
+//   .title {
+//     letter-spacing: 3px;
+//   }
+//   a {
+//     text-decoration: none;
+//     color: #3abc30;
+//   }
+// }
 
 .index-bar-layout {
   width: 1px;
@@ -15,7 +20,7 @@
   transition: all .3s ease;
   box-shadow: 5px 0 5px 0px rgba(0, 0, 0, .05);
   z-index: 5;
-  background: #008C50;
+  background: #008c50;
   position: fixed;
   border-left: 1px solid #eee;
 }
