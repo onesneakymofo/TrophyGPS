@@ -17,6 +17,7 @@ class Map {
         attribution: ''
       }
     ).addTo(this.map)
+    new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
   }
 
   fetchDataPoints() {
