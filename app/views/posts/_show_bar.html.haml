@@ -22,7 +22,11 @@
         %h2 Details
         %hr
         .mt-3
-          %p.info-text= post.description
+          %p.info-text
+          - if post.description.present?
+            = post.description
+          - else
+            No description available.
           %hr.width-reducer
         .bar-detail= post.created_at
   .pl-3
