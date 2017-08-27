@@ -16,10 +16,15 @@
         super.rejectData(post.coordinates.y)
       )
         return
-      L.marker([post.coordinates.x, post.coordinates.y], {
+      var marker = new L.marker([post.coordinates.x, post.coordinates.y], {
         icon: icon
-      }).addTo(this.map)
-    }
+      });
+      marker.url = post.url
+      marker.addTo(this.map);
+      marker.on('click', function(){
+        window.location = (this.url);
+      });    }
+
 
     addPoints(data) {
       if (data.length) {
