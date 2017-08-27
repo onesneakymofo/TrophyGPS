@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'images/new'
+
+  get 'images/create'
+
   get 'pages/home' => 'high_voltage/pages#show', id: 'home'
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :images, only: [ :new, :create ]
 
   authenticated :user do
     root to: 'posts#index', as: :authenticated_root

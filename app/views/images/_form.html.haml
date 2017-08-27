@@ -1,0 +1,7 @@
+= form_for @image do |f|
+  %fieldset
+    = f.hidden_field :image, value: @image.cached_image_data
+    = f.file_field :image
+  .actions
+    = f.submit 'Save'
+
