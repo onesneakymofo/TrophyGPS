@@ -10,6 +10,7 @@
 
     addToMap(post) {
       const icon = greenIcon
+
       if (
         super.rejectData(post.coordinates.x) ||
         super.rejectData(post.coordinates.y)
@@ -23,7 +24,9 @@
     addPoints(data) {
       if (data.length) {
         data.forEach(post => {
-          this.addToMap(post)
+          if ($(post.coordinates.x).length > 0 && $(post.coordinates.y).length > 0) {
+            this.addToMap(post)
+            }
         }, this)
       } else {
         this.addToMap(data)
