@@ -1,16 +1,12 @@
 .nav-bar-layout.p-2.layout.d-flex.flex-column.align-items-center.nav-background-full
-  = image_tag "logo-small.svg", class: "logo-small"
-  = link_to new_post_path do
-    = image_tag "icon-map-dropper.svg", class:"icon-image-sm"
-    %div.d-flex.align-items-center
-      .link-effects
-        Map
+  = link_to authenticated_root_path do
+    = image_tag "logo-small.svg", class: "logo-small"
   = link_to posts_path do
     = image_tag "icon-add.svg", class:"icon-image-sm"
     %div.d-flex.align-items-center
       .link-effects
         Posts
-  = link_to new_post_path do
+  = link_to new_image_path do
     = image_tag "icon-add.svg", class:"icon-image-sm"
     %div.d-flex.align-items-center
       .link-effects

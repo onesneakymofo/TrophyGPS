@@ -1,12 +1,4 @@
-// .nav-bar-layout {
-//   background: #fff;
-//   color: #07AA6;
-//   width: 150px;
-//   text-align: center;
-//   border-right: 1px solid #eee;
-//   .title {
-//     letter-spacing: 3px;
-//   }
+
 a {
   transition: all 250ms;
   text-decoration: none;
@@ -16,7 +8,7 @@ a {
     text-decoration: none;
   }
 }
-// }
+
 
 .index-bar-layout {
   width: 1px;
@@ -27,10 +19,6 @@ a {
   background: #fff;
   position: fixed;
   border-left: 1px solid #eee;
-  h5 {
-    background: black;
-    text-align: center;
-  }
 }
 
 .index-bar-layout.show {
@@ -55,14 +43,18 @@ a {
   font-size: 14px;
 }
 
-.module img {
+.post-image {
   position: relative;
-  width: 100%; /* for IE 6 */
+  height: 250px;
 }
 
-module h2 {
+.post-description {
+  padding: 6px;
+  background: #666;
   position: absolute;
-  top: 200px;
-  left: 0;
+  top: 0px;
+  opacity: .9;
+  left: 15px;
   width: 100%;
+
 }

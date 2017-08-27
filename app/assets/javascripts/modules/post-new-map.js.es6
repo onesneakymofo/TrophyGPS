@@ -14,7 +14,6 @@
     addToMap(x,y) {
       const fixedIcon = redIcon;
       const moveableIcon = greenIcon;
-      debugger;
       if (
         super.rejectData(x) ||
         super.rejectData(y)
