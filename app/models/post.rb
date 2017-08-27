@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_one :image, as: :imageable
 
   validates :title, presence: true
-  validates :image, presence: true
+  # validates :image, presence: true
 
   accepts_nested_attributes_for :image
 end

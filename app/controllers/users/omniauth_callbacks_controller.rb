@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       def #{provider}
         @user = User.find_for_oauth(request.env["omniauth.auth"], current_user)
         if @user.persisted?
-          sign_in_and_redirect @user, event: :authentication
+          sign_in_and_redirect authenticated_root_path
           set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
         else
           session["devise.#{provider}_data"] = env["omniauth.auth"]
@@ -19,6 +19,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def after_sign_in_path_for(resource)
-    root_path
+    authenticated_root_path
   end
 end

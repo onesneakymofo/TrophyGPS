@@ -7,10 +7,15 @@
 //   .title {
 //     letter-spacing: 3px;
 //   }
-//   a {
-//     text-decoration: none;
-//     color: #3abc30;
-//   }
+a {
+  transition: all 250ms;
+  text-decoration: none;
+  color: #626b7c;
+  &:hover {
+    color: #00c3f6;
+    text-decoration: none;
+  }
+}
 // }
 
 .index-bar-layout {

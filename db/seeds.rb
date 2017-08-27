@@ -14,7 +14,7 @@ Post.destroy_all
     password: 'password'
   )
 
-  post = Post.create(
+  post = Post.create!(
     user: user,
     title: Faker::Hipster.sentence(3),
     description: Faker::RickAndMorty.quote,
