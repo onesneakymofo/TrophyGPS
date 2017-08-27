@@ -1,3 +1,4 @@
+
 // .nav-bar-layout {
 //   background: #fff;
 //   color: #07AA6;
@@ -36,17 +37,32 @@ a {
 .index-bar-layout.show {
   opacity: 1;
   background: #fff;
-  width: 250px;
-  .top {
-    background: #ff9f1c;
-  }
-}
-
-.gradient {
-  background-color: #3abc30;
-  background-image: linear-gradient(62deg, #3abc30 0%, #17a917 100%);
+  width: 375px;
+  .gradient {
+      background-color: #3abc30;
+      background-image: linear-gradient(62deg, #3abc30 0%, #17a917 100%);
+    }
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 .text-white {
   color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #f4b21e;
+  font-size: 14px;
+}
+
+.module img {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+module h2 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
 }
