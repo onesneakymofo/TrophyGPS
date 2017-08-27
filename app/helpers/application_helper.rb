@@ -3,7 +3,7 @@ module ApplicationHelper
     if current_user.following_ids.include?(user.id)
       link_to 'Unfollow', users_relationship_path(user.follower_id_for(current_user)), method: :delete
     else
-      link_to 'Follow', users_relationships_path(current_user, followed_id: user.id), method: :post
+      link_to 'Follow', users_relationships_path(user_id: current_user, followed_id: user.id), method: :post
     end
   end
 end
