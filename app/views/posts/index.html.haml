@@ -1,2 +1,9 @@
-= render("shared/bar")
+.index-bar-layout.layout.show-bar
+  %h5
+    Top Posts
+  - @posts.each do |post|
+    .row
+      .col-md-12
+        = link_to post.title, post_path(post)
+        %hr
 #map-large{ data: { behavior: 'posts-map' }}

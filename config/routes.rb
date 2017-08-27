@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   resources :images, only: [ :new, :create ]
 
   authenticated :user do
-    root to: 'posts#index', as: :authenticated_root
+    root to: 'main#index', as: :authenticated_root
   end
 end
