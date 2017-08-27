@@ -1,7 +1,29 @@
-%h1 Editing post
-
-= render 'form'
-
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+.index-bar-layout.layout.show.show-bar.p-0
+  %br
+  %br
+  %br
+  %h5
+    New Trophy Posting
+  = form_for @post do |f|
+    - if @post.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+        %ul
+          - @post.errors.full_messages.each do |msg|
+            %li= msg
+    %fieldset.image-and-map
+      .post-image
+        %img{ src: @post.image.image_url }
+        #coordinates{data: {latitude: @post.image.coordinates.to_a.first,
+                            longitude: @post.image.coordinates.to_a.last}}
+    %fieldset
+      %p
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+    %fieldset
+      %p
+        = f.label :description
+        = f.text_field :description, class: 'form-control'
+    .actionso
+      = f.submit 'Save'
+#map-new-post{ data: { behavior: 'posts-map-new' }}
